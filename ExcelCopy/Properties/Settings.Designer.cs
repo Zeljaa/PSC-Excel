@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PSC_Excel.Properties
+namespace ExcelCopy.Properties
 {
 
 
