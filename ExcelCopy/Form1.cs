@@ -14,7 +14,7 @@ namespace ExcelCopy
     public partial class Form1 : Form
     {
         functions functions;
-        read_write rw;
+        
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace ExcelCopy
             //int w = this.Size.Width;
             //int h = this.Size.Height;
             functions = new functions(dataGrid);
-            rw = new read_write();
+            
         }   
 
         
