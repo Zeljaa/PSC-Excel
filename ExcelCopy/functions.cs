@@ -3,41 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Windows.Forms;
+
 
 
 namespace ExcelCopy
 {
     class functions
     {
-        DataTable dt = new DataTable();
-        DataGridView dataGrid;
-        int sizew = 12;
-        int sizeh = 20;
-        public functions(DataGridView dataGrid)
+        //int sizew = 12;
+        //int sizeh = 20;
+        public string[,] matrica = new string[20, 12];
+        /*public functions()
         {
-            this.dataGrid = dataGrid;
-            for (int i = 0; i < sizew; i++)
-            {
-                string s = Char.ConvertFromUtf32(i + 65);
-                dt.Columns.Add(s);
+          
 
-            }
-            for (int i = 0; i < sizeh; i++)
-            {
-                dt.Rows.Add();
-            }
-
-            dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGrid.DataSource = dt;
-
-            dataGrid.RowHeadersWidth = dataGrid.RowHeadersWidth + (25);
-            for (int i = 0; i < sizeh; i++)
-            {
-                dataGrid.Rows[i].HeaderCell.Value = (i + 1).ToString();
-            }
-        }
+           
+            
+        }*/
         private double Sum(double a, double b)
         {
             return a + b;
@@ -73,14 +55,14 @@ namespace ExcelCopy
                         Tuple<int, int> elem = GetIndex(sec);
                         int column = elem.Item1;
                         int row = elem.Item2;
-                        sec = dataGrid.Rows[row].Cells[column].Value.ToString();
+                        sec = matrica[row,column].ToString();
                     }
                     if ((int)frst[0] >= 65)
                     {
                         Tuple<int, int> elem = GetIndex(frst);
                         int column = elem.Item1;
                         int row = elem.Item2;
-                        frst = dataGrid.Rows[row].Cells[column].Value.ToString();
+                        frst = matrica[row, column].ToString();
                     }
                     double a = double.Parse(frst, System.Globalization.CultureInfo.InvariantCulture);
                     double b = double.Parse(sec, System.Globalization.CultureInfo.InvariantCulture);
@@ -118,7 +100,7 @@ namespace ExcelCopy
             return Tuple.Create(column, row);
         }
 
-        public void DoFunc(string t)
+        public Tuple<String, int, int> DoFunc(string t, Tuple<int, int> selektovana_celija )
         {
             int column;
             int row;
@@ -128,8 +110,8 @@ namespace ExcelCopy
             // * = 5
             if (tokens[0].Equals(""))
             {
-                column = dataGrid.CurrentCell.ColumnIndex;
-                row = dataGrid.CurrentCell.RowIndex;
+                column = selektovana_celija.Item1;
+                row = selektovana_celija.Item2;
             }
 
             //* A1 = 5
@@ -141,10 +123,12 @@ namespace ExcelCopy
             }
 
             //tokens[1] = tokens[1].Replace(" ", string.Empty);
-            String result = Calc(tokens[1]);
+            matrica[row, column] = tokens[1];
+           
+            return Tuple.Create(Calc(tokens[1]), column, row);
 
-            dataGrid.Rows[row].Cells[column].Value = result;
-            dataGrid.UpdateCellValue(column, row);
         }
+         
+
     }
 }

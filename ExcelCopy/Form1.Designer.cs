@@ -38,25 +38,29 @@
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(3, 55);
+            this.dataGrid.Location = new System.Drawing.Point(4, 68);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid.Name = "dataGrid";
-            this.dataGrid.Size = new System.Drawing.Size(1200, 592);
+            this.dataGrid.Size = new System.Drawing.Size(1600, 729);
             this.dataGrid.TabIndex = 0;
+            this.dataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellEndEdit);
             // 
             // function
             // 
             this.function.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.function.Location = new System.Drawing.Point(59, 12);
+            this.function.Location = new System.Drawing.Point(79, 15);
+            this.function.Margin = new System.Windows.Forms.Padding(4);
             this.function.Name = "function";
-            this.function.Size = new System.Drawing.Size(403, 26);
+            this.function.Size = new System.Drawing.Size(536, 30);
             this.function.TabIndex = 1;
             this.function.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // calcBtn
             // 
-            this.calcBtn.Location = new System.Drawing.Point(511, 12);
+            this.calcBtn.Location = new System.Drawing.Point(681, 15);
+            this.calcBtn.Margin = new System.Windows.Forms.Padding(4);
             this.calcBtn.Name = "calcBtn";
-            this.calcBtn.Size = new System.Drawing.Size(75, 23);
+            this.calcBtn.Size = new System.Drawing.Size(100, 28);
             this.calcBtn.TabIndex = 2;
             this.calcBtn.Text = "Calculate";
             this.calcBtn.UseVisualStyleBackColor = true;
@@ -64,9 +68,10 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(593, 12);
+            this.saveBtn.Location = new System.Drawing.Point(791, 15);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(100, 28);
             this.saveBtn.TabIndex = 3;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -74,13 +79,14 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 646);
+            this.ClientSize = new System.Drawing.Size(1605, 795);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.calcBtn);
             this.Controls.Add(this.function);
             this.Controls.Add(this.dataGrid);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

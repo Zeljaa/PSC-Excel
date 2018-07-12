@@ -26,3 +26,23 @@ C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\Excel\ExcelCopy\obj\Debug\E
 C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.GenerateResource.Cache
 C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\Excel\ExcelCopy\obj\Debug\ExcelCopy.exe
 C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\Excel\ExcelCopy\obj\Debug\ExcelCopy.pdb
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.exe.config
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.exe
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.pdb
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csprojResolveAssemblyReference.cache
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Form1.resources
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Properties.Resources.resources
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.GenerateResource.Cache
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.exe
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.pdb
+C:\Users\Vladimir Zeljkovic\Desktop\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.ResolveComReference.cache
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.exe.config
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.exe
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\bin\Debug\ExcelCopy.pdb
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csprojResolveAssemblyReference.cache
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.ResolveComReference.cache
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Form1.resources
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Properties.Resources.resources
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.GenerateResource.Cache
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.exe
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.pdb
