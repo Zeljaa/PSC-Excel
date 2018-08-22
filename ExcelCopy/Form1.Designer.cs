@@ -32,7 +32,6 @@
             this.function = new System.Windows.Forms.TextBox();
             this.calcBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.openBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
@@ -79,17 +78,6 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // openBtn
-            // 
-            this.openBtn.Location = new System.Drawing.Point(899, 15);
-            this.openBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(100, 28);
-            this.openBtn.TabIndex = 4;
-            this.openBtn.Text = "Open";
-            this.openBtn.UseVisualStyleBackColor = true;
-            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(40, 15);
@@ -106,7 +94,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1605, 795);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.openBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.calcBtn);
             this.Controls.Add(this.function);
@@ -127,7 +114,6 @@
         private System.Windows.Forms.TextBox function;
         private System.Windows.Forms.Button calcBtn;
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button openBtn;
         private System.Windows.Forms.Button button1;
     }
 }
