@@ -20,18 +20,17 @@ namespace ExcelCopy
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //int w = this.Size.Width;
-            //int h = this.Size.Height;
+       
             functions = new functions();
-            dt = new DataTable();  
-            
-            int sizew = 12;
-            int sizeh = 20;
+            dt = new DataTable();
+
+            const int sizew = 12;
+            const int sizeh = 20;
 
             for (int i = 0; i < sizew; i++)
             {
@@ -52,53 +51,33 @@ namespace ExcelCopy
             {
                 dataGrid.Rows[i].HeaderCell.Value = (i + 1).ToString();
             }
-        }           
+        }
 
         private void calcBtn_Click(object sender, EventArgs e)
-        {    
-                     
+        {
+
             try
             {
-                dataGrid.Rows[functions.DoFunc(function.Text, Trenutna_celija()).Item3].Cells[functions.DoFunc(function.Text, Trenutna_celija()).Item2].Value = functions.DoFunc(function.Text, Trenutna_celija()).Item1;
+                Tuple<string, int, int> a = functions.DoFunc(function.Text, Trenutna_celija());
+                dataGrid.Rows[a.Item3].Cells[a.Item2].Value = a.Item1;
                 function.Text = "";
-                //ConnectionTo();
+                int column = a.Item2;
+                int row = a.Item3;
+                string polje = ((char)(65 + column)).ToString() + (row + 1).ToString();
+                Provera(polje);
             }
             catch
             {
                 function.Text = "Error.";
             }
-      
+            
         }
 
-       private Tuple<int, int> Trenutna_celija()
+        private Tuple<int, int> Trenutna_celija()
         {
             return Tuple.Create(dataGrid.CurrentCell.ColumnIndex, dataGrid.CurrentCell.RowIndex);
         }
 
-        private void ConnectionFrom()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                for (int j = 0; j < 12; j++)
-                {
-
-                    functions.matrica[i, j] = dataGrid.Rows[i].Cells[j].Value.ToString();
-                    
-                }
-            }
-        }
-      
-       private void ConnectionTo()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                for (int j = 0; j < 12; j++)
-                {
-                    dataGrid.Rows[i].Cells[j].Value = functions.matrica[i, j];
-                    dataGrid.Update();
-                }
-            }
-        }
         private void saveBtn_Click(object sender, EventArgs e)
         {
 
@@ -110,7 +89,7 @@ namespace ExcelCopy
                     for (int j = 0; j < 12; j++)
                     {
                         writer.Write(functions.matrica[i, j]);
-                        writer.Write(",");
+                        writer.Write(':');
                     }
                     writer.WriteLine();
                 }
@@ -120,13 +99,81 @@ namespace ExcelCopy
             {
                 MessageBox.Show("Error while saving to file");
             }
-            
+
 
         }
 
         private void dataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            ConnectionFrom();
+
+            int column = e.ColumnIndex;
+            int row = e.RowIndex;
+            functions.matrica[row, column] = dataGrid.Rows[row].Cells[column].Value.ToString();
+            string polje = ((char)(65 + column)).ToString() + (row + 1).ToString();
+            Provera(polje);
+            
+        }
+        private void Provera(string polje)
+        {
+
+            for (int index = 0; index < functions.dict.Count; index++)
+            {
+                KeyValuePair<string, List<string>> item = functions.dict.ElementAt(index);
+
+                if (functions.dict[item.Key].Contains(polje))
+                {
+                    string novopolje = item.Key;
+                    
+                    try
+                    {
+                        string a = functions.Form1(functions.matrica[Int32.Parse(novopolje[1].ToString()) - 1, (int)novopolje[0] - 65]);
+                        dataGrid.Rows[Int32.Parse(novopolje[1].ToString()) - 1].Cells[(int)novopolje[0] - 65].Value = a;
+                        
+                    }
+                    catch
+                    {
+                        dataGrid.Rows[Int32.Parse(novopolje[1].ToString()) - 1].Cells[(int)novopolje[0] - 65].Value = "Error";
+                    }
+                    Provera(novopolje);
+                }
+            }
+        }
+        private void openBtn_Click(object sender, EventArgs e)
+        {
+            /*foreach (KeyValuePair<string, List<string>> kvp in functions.dict)
+            {
+                foreach (string value in kvp.Value)
+                {
+                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, value);
+
+                }
+            }*/
+
+        }
+        
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            if (form2.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Blaa");
+            }
+            string Rez = form2.a;
+            try
+            {
+                Tuple<string, int, int> a = functions.DoFunc(Rez, Trenutna_celija());
+                dataGrid.Rows[a.Item3].Cells[a.Item2].Value = a.Item1;
+                function.Text = "";
+                int column = a.Item2;
+                int row = a.Item3;
+                string polje = ((char)(65 + column)).ToString() + (row + 1).ToString();
+                Provera(polje);
+            }
+            catch
+            {
+                function.Text = "Error.";
+            }
         }
     }
 }
