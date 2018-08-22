@@ -47,3 +47,4 @@ D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.GenerateResou
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.exe
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.pdb
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Form2.resources
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Save.resources
