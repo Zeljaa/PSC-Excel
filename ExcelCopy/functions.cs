@@ -10,16 +10,11 @@ namespace ExcelCopy
 {
     class functions
     {
-        //int sizew = 12;
-        //int sizeh = 20;
-        public string[,] matrica = new string[20, 12];
-        /*public functions()
-        {
-          
-
-           
-            
-        }*/
+        const int a = 20;
+        const int b = 12;
+        public string[,] matrica = new string[a, b];
+        public Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        
         private double Sum(double a, double b)
         {
             return a + b;
@@ -29,11 +24,31 @@ namespace ExcelCopy
         {
             return a * b;
         }
-        
-        private String Calc(String input)
+        private void UpisDict(string value, string key)
+        {
+            if (dict.ContainsKey(key))
+            {
+                if (!dict[key].Contains(value))
+                {
+                    dict[key].Add(value);
+                }
+            }
+            else
+            {
+                List<string> lista = new List<string>();
+                lista.Add(value);
+                dict.Add(key, lista);
+            }
+        }
+        public string Form1(string input)
+        {
+            return Calc(input, null);
+        }
+        private string Calc(String input, String key)
         {
             Stack<string> st = new Stack<string>();
-            String buff = "";
+            string buff = "";
+            string kljuc = key;
             foreach (char c in input)
             {
                 if (c == ' ')
@@ -47,22 +62,27 @@ namespace ExcelCopy
                 }
                 else if (c == ')')
                 {
-                    String sec = buff;
-                    String frst = st.Pop().ToString();
-                    String fun = st.Pop().ToString();
+                    string sec = buff;
+                    string frst = st.Pop().ToString();
+                    string fun = st.Pop().ToString();
                     if ((int)sec[0] >= 65)
                     {
                         Tuple<int, int> elem = GetIndex(sec);
                         int column = elem.Item1;
                         int row = elem.Item2;
-                        sec = matrica[row,column].ToString();
+                        if (key != null)
+                            UpisDict(sec, kljuc);
+                        
+                        sec = Calc(matrica[row, column].ToString(), null);
                     }
                     if ((int)frst[0] >= 65)
                     {
                         Tuple<int, int> elem = GetIndex(frst);
                         int column = elem.Item1;
                         int row = elem.Item2;
-                        frst = matrica[row, column].ToString();
+                        if (key != null)
+                            UpisDict(frst, kljuc);
+                        frst = Calc(matrica[row, column].ToString(), null);
                     }
                     double a = double.Parse(frst, System.Globalization.CultureInfo.InvariantCulture);
                     double b = double.Parse(sec, System.Globalization.CultureInfo.InvariantCulture);
@@ -124,8 +144,8 @@ namespace ExcelCopy
 
             //tokens[1] = tokens[1].Replace(" ", string.Empty);
             matrica[row, column] = tokens[1];
-           
-            return Tuple.Create(Calc(tokens[1]), column, row);
+            string key = ((char)(65 + column)).ToString() + (row + 1).ToString();
+            return Tuple.Create(Calc(tokens[1] , key), column, row);
 
         }
          

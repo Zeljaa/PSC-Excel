@@ -46,3 +46,4 @@ D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Properties.Resources
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.csproj.GenerateResource.Cache
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.exe
 D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.pdb
+D:\Programiranje\C#\PSC-Excel\ExcelCopy\obj\Debug\ExcelCopy.Form2.resources
