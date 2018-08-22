@@ -79,11 +79,13 @@ namespace ExcelCopy
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
-        {
-
+        {            
+            Save s = new Save();
+            s.ShowDialog();
+            string path = s.a;
             try
             {
-                StreamWriter writer = new StreamWriter("File.txt");
+                StreamWriter writer = new StreamWriter(path);
                 for (int i = 0; i < 20; i++)
                 {
                     for (int j = 0; j < 12; j++)
