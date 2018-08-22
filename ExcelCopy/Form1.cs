@@ -79,11 +79,13 @@ namespace ExcelCopy
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
-        {
-
+        {            
+            Save s = new Save();
+            s.ShowDialog();
+            string path = s.a;
             try
             {
-                StreamWriter writer = new StreamWriter("D:/Programiranje/C#/PSC-Excel/File.txt");
+                StreamWriter writer = new StreamWriter(path);
                 for (int i = 0; i < 20; i++)
                 {
                     for (int j = 0; j < 12; j++)
@@ -137,18 +139,6 @@ namespace ExcelCopy
                     Provera(novopolje);
                 }
             }
-        }
-        private void openBtn_Click(object sender, EventArgs e)
-        {
-            /*foreach (KeyValuePair<string, List<string>> kvp in functions.dict)
-            {
-                foreach (string value in kvp.Value)
-                {
-                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, value);
-
-                }
-            }*/
-
         }
         
         
